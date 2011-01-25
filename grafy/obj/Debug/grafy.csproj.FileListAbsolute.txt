@@ -1,0 +1,20 @@
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\grafy.exe
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\grafy.pdb
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\grafy.Form1.resources
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\grafy.Properties.Resources.resources
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\grafy.csproj.GenerateResource.Cache
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\grafy.exe
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\obj\Debug\grafy.pdb
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\IronPython.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\grafy.exe.config
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\Calculate.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\IronPython.Modules.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\Microsoft.Scripting.Core.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\Microsoft.Scripting.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\Calculate.pdb
+C:\Documents and Settings\esse\Pulpit\grafy\grafy\bin\Debug\center_iron.py
+Z:\Dropbox\SGGW\semestr 5\grafy i sieci\projekt\grafy\bin\Debug\grafy.exe.config
+Z:\Dropbox\SGGW\semestr 5\grafy i sieci\projekt\grafy\obj\Debug\grafy.exe
+Z:\Dropbox\SGGW\semestr 5\grafy i sieci\projekt\grafy\obj\Debug\grafy.pdb
