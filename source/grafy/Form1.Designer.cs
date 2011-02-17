@@ -36,6 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Calculate";
+            this.button1.Text = "Wylicz";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -56,7 +57,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Clear";
+            this.button2.Text = "Czyść rysunek (nieodwracalne)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -85,7 +86,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Save graph";
+            this.button3.Text = "Zapisz graf";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -95,7 +96,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 23);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Read graph";
+            this.button4.Text = "Odczytaj graf";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -104,20 +105,30 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(97, 8);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(150, 17);
+            this.checkBox1.Size = new System.Drawing.Size(179, 17);
             this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Don\'t create new vertexes";
+            this.checkBox1.Text = "Nie twórz nowych wierzchołków";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(624, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 23);
+            this.button5.Size = new System.Drawing.Size(111, 23);
             this.button5.TabIndex = 9;
-            this.button5.Text = "Refresh picture";
+            this.button5.Text = "Odśwież rysunek";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(741, 4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(25, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "?";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -136,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 490);
             this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
@@ -148,7 +160,7 @@
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Calculating center of graph";
+            this.Text = "Grafy i sieci - wyliczanie środka grafu. Autor: Piotr Szmielew";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +177,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
     }
 }

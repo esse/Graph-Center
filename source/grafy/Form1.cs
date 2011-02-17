@@ -126,7 +126,7 @@ namespace grafy
                 }
                 else
                 {
-                    MessageBox.Show("Graph must be coherent!");
+                    MessageBox.Show("Graf musi być spójny");
                 }
             }
            
@@ -144,7 +144,7 @@ namespace grafy
             string key = String.Format("{0}, {1}", b[0], b[1]);
             if (!points.ContainsKey(key) && checkBox1.Checked)
             {
-                MessageBox.Show("Setting is 'don't create new vertices' - can't draw new vertex");
+                MessageBox.Show("Ustawione przyciąganie do istniejących punktów - nie można narysować nowego wierzchołka");
                 return;
             }
             
@@ -291,7 +291,7 @@ namespace grafy
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Application calculate center of drawed graph\nAfter drawing graph and clicking calculate, vertices that are center of graph will be marked with blue color.\nKliknięcie zapis/odczyt grafu powoduje zapisanie grafu do trzech plików lub odczytanie go (wszystkie pliki są wymagane)\nKliknięcie odśwież spowoduje przerysowanie grafu bez zaznaczonych wyliczonych punktów.\nZaznaczenie pola 'Nie twórz nowych wierzchołków' spowoduje zablokowanie grafu do istniejących wierzchołków i umożliwi rysowanie tylko krawędzi\nRysując każdą kolejną poza pierwszą krawędź należy zaczynać w istniejącym wierzchołku\n\nObecnie narysowana liczba wierzchołków: " + points.Count + "\nObecnie narysowana liczba krawędzi: " + edges.Count, "Pomoc i statystyki grafu");
+            MessageBox.Show("Program wylicza środek narysowanego grafu - przyjmując graf jako miasto, a punkty jako zabudowania,\nśrodek grafu jest optymalnym umiejscowieniem straży pożarnej w tym mieście\nPo narysowaniu grafu i kliknięciu wylicz, wierzchołki będące środkiem grafu zostaną oznaczone na niebiesko.\nKliknięcie zapis/odczyt grafu powoduje zapisanie grafu do trzech plików lub odczytanie go (wszystkie pliki są wymagane)\nKliknięcie odśwież spowoduje przerysowanie grafu bez zaznaczonych wyliczonych punktów.\nZaznaczenie pola 'Nie twórz nowych wierzchołków' spowoduje zablokowanie grafu do istniejących wierzchołków i umożliwi rysowanie tylko krawędzi\nRysując każdą kolejną poza pierwszą krawędź należy zaczynać w istniejącym wierzchołku\n\nObecnie narysowana liczba wierzchołków: " + points.Count + "\nObecnie narysowana liczba krawędzi: " + edges.Count, "Pomoc i statystyki grafu");
         }
 
         private void button7_Click(object sender, EventArgs e)
