@@ -1,0 +1,9 @@
+Application to calculate center of drawed graph (C# + Python).
+
+Using parts of code from http://networkx.lanl.gov/, also using ironpython libraries and Microsoft Scripting Libraries.
+
+Requirements:
+.NET Framework 3.0
+
+How to use:
+Run grafy.exe, draw graph, click calculate -> voila! Center points of your graph will be marked by blue color :) 

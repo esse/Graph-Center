@@ -44,6 +44,7 @@ namespace grafy
         ScriptEngine m_engine;
         ScriptScope m_scope;
         ScriptSource source;
+        UndoClass undo;
 
         public Form1()
         {
@@ -56,6 +57,7 @@ namespace grafy
             m_engine = Python.CreateEngine();
             m_scope = m_engine.CreateScope();
             source = m_engine.CreateScriptSourceFromFile("center_iron.py");
+            
             
         }
 
@@ -102,6 +104,7 @@ namespace grafy
 
         private void panel1_Click(object sender, MouseEventArgs e)
         {
+            undo = new UndoClass(new List<int[]>(edges), new Dictionary<string, int>(points), new Dictionary<int,string>(reverse_points));
             startpointx = e.X;
             startpointy = e.Y;
             a[0] = startpointx / 20;
@@ -123,7 +126,7 @@ namespace grafy
                 }
                 else
                 {
-                    MessageBox.Show("Graf musi być spójny");
+                    MessageBox.Show("Graph must be coherent!");
                 }
             }
            
@@ -132,6 +135,7 @@ namespace grafy
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
+            undo = new UndoClass(new List<int[]>(edges), new Dictionary<string, int>(points), new Dictionary<int, string>(reverse_points));
             finishpointx = e.X;
             finishpointy = e.Y;
             b[0] = finishpointx / 20;
@@ -140,7 +144,7 @@ namespace grafy
             string key = String.Format("{0}, {1}", b[0], b[1]);
             if (!points.ContainsKey(key) && checkBox1.Checked)
             {
-                MessageBox.Show("Ustawione przyciąganie do istniejących punktów - nie można narysować nowego wierzchołka");
+                MessageBox.Show("Setting is 'don't create new vertices' - can't draw new vertex");
                 return;
             }
             
@@ -163,11 +167,13 @@ namespace grafy
             
                 int[] edg = { points[beginkey], points[key] };
                 
-                edges.Add(edg);                     
+                edges.Add(edg);
+                button7.Enabled = true;      
         }
 
         private void Clean()
         {
+            button7.Enabled = false;
             a = new int[2];
             b = new int[2];
             edges = new List<int[]>();
@@ -237,6 +243,7 @@ namespace grafy
                 stream.Close();
                 Redraw();
                 Cursor.Current = Cursors.Default;
+                button7.Enabled = false;
                 MessageBox.Show("Graf odczytany");
             }
         }
@@ -284,8 +291,37 @@ namespace grafy
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Program wylicza środek narysowanego grafu - przyjmując graf jako miasto, a punkty jako zabudowania,\nśrodek grafu jest optymalnym umiejscowieniem straży pożarnej w tym mieście\nPo narysowaniu grafu i kliknięciu wylicz, wierzchołki będące środkiem grafu zostaną oznaczone na niebiesko.\nKliknięcie zapis/odczyt grafu powoduje zapisanie grafu do trzech plików lub odczytanie go (wszystkie pliki są wymagane)\nKliknięcie odśwież spowoduje przerysowanie grafu bez zaznaczonych wyliczonych punktów.\nZaznaczenie pola 'Nie twórz nowych wierzchołków' spowoduje zablokowanie grafu do istniejących wierzchołków i umożliwi rysowanie tylko krawędzi\nRysując każdą kolejną poza pierwszą krawędź należy zaczynać w istniejącym wierzchołku\n\nObecnie narysowana liczba wierzchołków: " + points.Count + "\nObecnie narysowana liczba krawędzi: " + edges.Count, "Pomoc i statystyki grafu");
+            MessageBox.Show("Application calculate center of drawed graph\nAfter drawing graph and clicking calculate, vertices that are center of graph will be marked with blue color.\nKliknięcie zapis/odczyt grafu powoduje zapisanie grafu do trzech plików lub odczytanie go (wszystkie pliki są wymagane)\nKliknięcie odśwież spowoduje przerysowanie grafu bez zaznaczonych wyliczonych punktów.\nZaznaczenie pola 'Nie twórz nowych wierzchołków' spowoduje zablokowanie grafu do istniejących wierzchołków i umożliwi rysowanie tylko krawędzi\nRysując każdą kolejną poza pierwszą krawędź należy zaczynać w istniejącym wierzchołku\n\nObecnie narysowana liczba wierzchołków: " + points.Count + "\nObecnie narysowana liczba krawędzi: " + edges.Count, "Pomoc i statystyki grafu");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Undo();
+        }
+
+        private void Undo()
+        {
+            UndoClass undo2 = new UndoClass(new List<int[]>(edges), new Dictionary<string, int>(points), new Dictionary<int, string>(reverse_points));
+            points = undo.points;
+            edges = undo.edges;
+            reverse_points = undo.reverse_points;
+            Redraw();
+            undo = undo2;
         }
        
+    }
+
+    class UndoClass
+    {
+        public List<int[]> edges = new List<int[]>();
+        public Dictionary<string, int> points = new Dictionary<string, int>();
+        public Dictionary<int, string> reverse_points = new Dictionary<int, string>();
+
+        public UndoClass(List<int[]> _edges, Dictionary<string, int> _points, Dictionary<int, string> _reverse_points)
+        {
+            edges = _edges;
+            points = _points;
+            reverse_points = _reverse_points;
+        }
     }
 }
